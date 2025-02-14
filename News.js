@@ -47,8 +47,8 @@ export const DUMMY_NEWS = [
     },
     {
       id: 'n6',
-      slug: 'landscape',
-      title: 'The beauty of the landscape',
+      slug: 'nature',
+      title: 'Safaris and Wildlife',
       author: 'JW Creatives',
       image: 'landscape.jpg',
       date: '2020-01-12',
