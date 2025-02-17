@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation"
 import { DUMMY_NEWS } from "@/News"
 
-export default function ImagePage({params}){
-    const newsItemSlug = params.slug
+export default async function ImagePage({params}){
+    const newsItemSlug = params?.slug
       const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newsItemSlug)
     
       if (!newsItemSlug) {

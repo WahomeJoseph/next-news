@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 export default async function NewsPage({ params }) {
-  const newsSlug = await params.slug
+  const newsSlug = await params?.slug
   const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newsSlug)
 
   if (!newsItem) {
