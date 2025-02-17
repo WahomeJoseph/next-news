@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-export default function NewsList({news}) {
+export default function NewsList({ news }) {
     return (
-        <div>
+        <>
             <ul className="grid md:grid-cols-3 sm:grid-cols-2 gap-20 m-8 p-10">
                 {news.map((newsItem) => (
                     <li key={newsItem.id} className="flex p-6 w-full h-full items-center border-t rounded-t border-[#f1f1f1] border-b rounded-b hover:border-b-[#f1f1f1] hover:shadow-[0px_20px_207px_10px_rgba(187,_163,_163,_0.54)]">
@@ -13,6 +13,6 @@ export default function NewsList({news}) {
                     </li>
                 ))}
             </ul>
-        </div>
+        </>
     )
 }
