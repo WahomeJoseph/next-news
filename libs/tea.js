@@ -4,7 +4,7 @@ export function getAllNews() {
 }
 
 export function getLatestNews() {
-  return DUMMY_NEWS.slice(0, 3);
+  return DUMMY_NEWS.slice(0, 4);
 }
 
 export function getAvailableNewsYears() {

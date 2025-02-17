@@ -1,5 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
+import Navlink from './Navlink'
 
 export default function Navigation() {
   return (
@@ -9,8 +9,8 @@ export default function Navigation() {
       </div>
       <nav>
         <ul className="flex space-x-10 bg-transarent p-2 rounded-sm">
-          <li><Link href='/news' className="text-[#f1f1f1] bg-transparent text-xl outline-none p-2 hover:shadow-[0px_20px_207px_10px_rgba(187,_163,_163,_0.54)]">News</Link></li>
-          <li><Link href='/news' className="text-[#f1f1f1] bg-transparent text-xl outline-none p-2 hover:shadow-[0px_20px_207px_10px_rgba(187,_163,_163,_0.54)]">Login</Link></li>
+          <li><Navlink href='/news'>News</Navlink></li>
+          <li><Navlink href='/hot'>Hot T</Navlink></li>
         </ul>
       </nav>
     </header>
