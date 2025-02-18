@@ -3,7 +3,7 @@ import NewsList from '@/components/NewsList'
 import { getAllNews } from '@/libs/tea'
 
 export default async function News() {
-  const news = getAllNews()
+  const news = await getAllNews()
 
   return (
     <>

@@ -3,8 +3,9 @@ import { DUMMY_NEWS } from "@/News";
 
 const db = sql('data.db')
 
-export function getAllNews() {
+export async function getAllNews() {
   const news = db.prepare('SELECT * FROM news').all() //fetch all the dummy news via sqlite3
+  await new Promise(resolve => setTimeout(resolve, 2000))
   return news
 }
 
