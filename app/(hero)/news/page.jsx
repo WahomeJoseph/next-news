@@ -1,4 +1,4 @@
-'use client'
+
 import NewsList from '@/components/NewsList'
 import { useEffect, useState } from 'react'
 
