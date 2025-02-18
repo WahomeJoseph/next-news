@@ -3,19 +3,20 @@ import { getAvailableNewsMonths, getAvailableNewsYears, getNewsForYear, getNewsF
 import NewsList from '@/components/NewsList'
 
 export default async function FilterNews({ params }) {
-  const filter = await params.filter
+  const filter = params?.filter
 
   const selectedYear = filter?.[0]
   const selectedMonth = filter?.[1]
-  let years = getAvailableNewsYears()
 
+  let years = await getAvailableNewsYears()
   let news
+
   if (selectedYear && !selectedMonth) {
-    news = getNewsForYear(selectedYear)
+    news = await getNewsForYear(selectedYear)
     years = getAvailableNewsMonths(selectedYear)
   }
   if (selectedYear && selectedMonth) {
-    news = getNewsForYearAndMonth(selectedYear, selectedMonth)
+    news = await getNewsForYearAndMonth(selectedYear, selectedMonth)
     years = []
   }
   let newsContent = <p className='text-red-600 tracking-wide'>No News Found For the Selected Period!</p>
@@ -24,9 +25,11 @@ export default async function FilterNews({ params }) {
     newsContent = <NewsList news={news} />
   }
 
+  const availableYears = await getAvailableNewsYears()
+
   if (
-    (selectedYear && !getAvailableNewsYears().includes(+selectedYear)) ||
-    (selectedMonth && !getAvailableNewsMonths(selectedYear).includes(+selectedMonth))
+    (selectedYear && !availableYears.includes(selectedYear)) ||
+    (selectedMonth && !getAvailableNewsMonths(selectedYear).includes(selectedMonth))
   ) {
     throw new Error('Invalid Path! Try Something Else!')
   }
